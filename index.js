@@ -154,6 +154,7 @@ async function run() {
     const availableMigrations = (await readdirAsync(MIGRATIONS_DIR))
       .filter((file) => /^\d+?\.js$/.test(file))
       .map((file) => getVersionOfFile(file));
+    console.log("availableMigrations: ", availableMigrations);
 
     // ---------------------------------------------------------------------------
     console.log("Figure out latest ran migration of the contentful space");
