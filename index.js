@@ -227,7 +227,7 @@ async function run() {
 
     // ---------------------------------------------------------------------------
     console.log("Checking if we need to update master alias");
-    if (ENVIRONMENT_INPUT == "master") {
+    if (ENVIRONMENT_INPUT == "main") {
       console.log(`Running on master.`);
       console.log(`Updating master alias.`);
       await space
