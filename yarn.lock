@@ -762,11 +762,6 @@ any-observable@^0.3.0:
   resolved "https://registry.yarnpkg.com/any-observable/-/any-observable-0.3.0.tgz#af933475e5806a67d0d7df090dd5e8bef65d119b"
   integrity sha512-/FQM1EDkTsf63Ub2C6O7GuYFDsSXUwsaZDurV0np41ocwq0jthUAYCmhBX9f+KwlaCgIuWyr/4WlUQUBfKfZog==
 
-any-observable@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/any-observable/-/any-observable-0.5.1.tgz#ab7d49ff64ebe6dd3ae26760a3f5a881e8db791e"
-  integrity sha512-8zv01bgDOp9PTmRTNCAHTw64TFP2rvlX4LvtNJLachaXY+AjmIvLT47fABNPCiIe89hKiSCo2n5zmPqI9CElPA==
-
 anymatch@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-2.0.0.tgz#bcb24b4f37934d9aa7ac17b4adaf89e7c76ef2eb"
@@ -5310,8 +5305,3 @@ yargs@^17.1.1, yargs@^17.3.0:
     string-width "^4.2.3"
     y18n "^5.0.5"
     yargs-parser "^21.0.0"
-
-zen-observable@^0.8.15:
-  version "0.8.15"
-  resolved "https://registry.yarnpkg.com/zen-observable/-/zen-observable-0.8.15.tgz#96415c512d8e3ffd920afd3889604e30b9eaac15"
-  integrity sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==

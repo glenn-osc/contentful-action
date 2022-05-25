@@ -35,7 +35,9 @@
   "devDependencies": {
     "@vercel/ncc": "^0.33.4",
     "eslint": "^6.3.0",
-    "jest": "^24.9.0",
+    "jest": "^24.9.0"
+  },
+  "peerDependencies": {
     "any-observable": "^0.5.1",
     "zen-observable": "^0.8.15"
   }
