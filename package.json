@@ -27,10 +27,12 @@
   "dependencies": {
     "@actions/core": "^1.8.1",
     "@actions/github": "^5.0.3",
+    "any-observable": "^0.5.1",
     "contentful-export": "^7.17.7",
     "contentful-import": "^8.3.0",
     "contentful-management": "10.6.0",
-    "contentful-migration": "^4.9.0"
+    "contentful-migration": "^4.9.0",
+    "zen-observable": "^0.8.15"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.33.4",
