@@ -33,7 +33,7 @@
     "contentful-migration": "^4.9.0"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.20.5",
+    "@vercel/ncc": "^0.33.4",
     "eslint": "^6.3.0",
     "jest": "^24.9.0"
   }
