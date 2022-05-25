@@ -1,9 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 
-require("rxjs");
-require("zen-observable");
-
 // most @actions toolkit packages have async methods
 async function run() {
   try {
@@ -13,8 +10,6 @@ async function run() {
     const readdirAsync = promisify(readdir);
     const path = require("path");
     const { createClient } = require("contentful-management");
-    const contentfulImport = require("contentful-import");
-    const contentfulExport = require("contentful-export");
     const {
       default: runMigration,
     } = require("contentful-migration/built/bin/cli");
@@ -218,23 +213,6 @@ async function run() {
             filePath,
           })
         );
-        // Export content from staging
-        const exportOptions = {
-          spaceId: SPACE_ID,
-          managementToken: MANAGEMENT_API_KEY,
-          environmentId: "Staging",
-        };
-
-        const exportResult = await contentfulExport(exportOptions);
-        // Import content to new environment
-        const importOptions = {
-          content: exportResult,
-          spaceId: SPACE_ID,
-          managementToken: MANAGEMENT_API_KEY,
-          environmentId: ENVIRONMENT_ID,
-        };
-
-        await contentfulImport(importOptions);
       } catch (error) {
         console.log("MIGRATION ERROR: ", error);
       }
