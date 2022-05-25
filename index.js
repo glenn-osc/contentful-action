@@ -1,6 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
-require("any-observable/register")("zen");
+require("any-observable/register")("zen-observable");
 require("any-observable");
 
 // most @actions toolkit packages have async methods
