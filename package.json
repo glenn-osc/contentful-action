@@ -27,6 +27,8 @@
   "dependencies": {
     "@actions/core": "^1.1.1",
     "@actions/github": "^3.0.0",
+    "contentful-export": "^7.17.7",
+    "contentful-import": "^8.3.0",
     "contentful-management": "^6.2.0-beta0",
     "contentful-migration": "^4.9.0"
   },

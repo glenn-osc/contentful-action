@@ -11,6 +11,8 @@ async function run() {
     const readdirAsync = promisify(readdir);
     const path = require("path");
     const { createClient } = require("contentful-management");
+    const contentfulImport = require("contentful-import");
+    const contentfulExport = require("contentful-export");
     const {
       default: runMigration,
     } = require("contentful-migration/built/bin/cli");
@@ -207,11 +209,33 @@ async function run() {
         getFileOfVersion(migrationToRun)
       );
       console.log(`Running ${filePath}`);
-      await runMigration(
-        Object.assign(migrationOptions, {
-          filePath,
-        })
-      );
+
+      try {
+        await runMigration(
+          Object.assign(migrationOptions, {
+            filePath,
+          })
+        );
+        // Export content from staging
+        const exportOptions = {
+          spaceId: SPACE_ID,
+          managementToken: MANAGEMENT_API_KEY,
+          environmentId: "Staging",
+        };
+
+        const exportResult = await contentfulExport(exportOptions);
+        // Import content to new environment
+        const importOptions = {
+          content: exportResult,
+          spaceId: SPACE_ID,
+          managementToken: MANAGEMENT_API_KEY,
+          environmentId: ENVIRONMENT_ID,
+        };
+
+        await contentfulImport(importOptions);
+      } catch (error) {
+        console.log("MIGRATION ERROR: ", error);
+      }
       console.log(`${migrationToRun} succeeded`);
 
       storedVersionEntry.fields.version[defaultLocale] = migrationToRun;
