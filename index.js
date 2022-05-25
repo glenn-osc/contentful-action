@@ -1,5 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
+require("any-observable/register")("rxjs");
 
 // most @actions toolkit packages have async methods
 async function run() {
