@@ -91,7 +91,7 @@ async function run() {
     // }
 
     // ---------------------------------------------------------------------------
-    if (ENVIRONMENT_ID === "master") {
+    if (ENVIRONMENT_ID === "main") {
       console.log(`Creating environment ${ENVIRONMENT_ID}`);
       environment = await space.createEnvironmentWithId(ENVIRONMENT_ID, {
         name: ENVIRONMENT_ID,
