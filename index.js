@@ -65,12 +65,12 @@ async function run() {
     let environment;
     console.log("Running with the following configuration");
     // ---------------------------------------------------------------------------
-    if (ENVIRONMENT_INPUT == "master") {
-      console.log(`Running on master.`);
+    if (ENVIRONMENT_INPUT == "main") {
+      console.log(`Running on main.`);
       ENVIRONMENT_ID = "master-".concat(getStringDate());
     } else {
-      console.log("Running on feature branch");
-      ENVIRONMENT_ID = "GH-".concat(ENVIRONMENT_INPUT);
+      console.log("Running on staging branch");
+      ENVIRONMENT_ID = "staging";
     }
     console.log(`ENVIRONMENT_ID: ${ENVIRONMENT_ID}`);
 
@@ -80,18 +80,18 @@ async function run() {
       `Checking for existing versions of environment: ${ENVIRONMENT_ID}`
     );
 
-    try {
-      environment = await space.getEnvironment(ENVIRONMENT_ID);
-      if (ENVIRONMENT_ID != "master") {
-        await environment.delete();
-        console.log("Environment deleted");
-      }
-    } catch (e) {
-      console.log("Environment not found");
-    }
+    // try {
+    //   environment = await space.getEnvironment(ENVIRONMENT_ID);
+    //   if (ENVIRONMENT_ID != "master") {
+    //     await environment.delete();
+    //     console.log("Environment deleted");
+    //   }
+    // } catch (e) {
+    //   console.log("Environment not found");
+    // }
 
     // ---------------------------------------------------------------------------
-    if (ENVIRONMENT_ID != "master") {
+    if (ENVIRONMENT_ID === "master") {
       console.log(`Creating environment ${ENVIRONMENT_ID}`);
       environment = await space.createEnvironmentWithId(ENVIRONMENT_ID, {
         name: ENVIRONMENT_ID,
