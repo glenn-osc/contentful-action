@@ -96,6 +96,8 @@ async function run() {
       environment = await space.createEnvironmentWithId(ENVIRONMENT_ID, {
         name: ENVIRONMENT_ID,
       });
+    } else if (ENVIRONMENT_ID.startsWith("staging")) {
+      environment = await space.getEnvironment(ENVIRONMENT_ID);
     }
     // ---------------------------------------------------------------------------
     const DELAY = 3000;
