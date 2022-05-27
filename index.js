@@ -104,7 +104,7 @@ async function run() {
     const MAX_NUMBER_OF_TRIES = 10;
     let count = 0;
 
-    console.log("Waiting for environment processing...");
+    console.log(`Waiting for environment ${environment.name} processing...`);
 
     while (count < MAX_NUMBER_OF_TRIES) {
       const status = (await space.getEnvironment(environment.sys.id)).sys.status
